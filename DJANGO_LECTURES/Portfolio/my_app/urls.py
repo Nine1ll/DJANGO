@@ -2,6 +2,12 @@ from django.urls import path
 from . import views
 
 # 기본적으로 path 속 ''에는 my_app/ 이 포함된 상황임.
+
 urlpatterns = [
-    path('',views.index,name='index')
+    path('',views.index,name='index'),
+    path('<str:topic>/',views.news_view),
+    path('<int:num1>/<int:num2>',views.add_view)
+    # path('sports/',views.sport_view),
+    # path('finance/',views.finance_view)
 ]
+
